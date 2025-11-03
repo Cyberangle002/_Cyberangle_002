@@ -16,7 +16,45 @@
   <link rel="icon" href="images/favicon.png" type="image/png">
 
 </head>
+
 <body>
+  <script>
+async function submitContact(event) {
+  event.preventDefault();
+
+  const form = document.getElementById("contact-form");
+  const name = form.elements["name"].value;
+  const email = form.elements["email"].value;
+  const message = form.elements["message"].value;
+
+  try {
+    const response = await fetch("http://51.20.189.213:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("✅ Message sent successfully!");
+      form.reset();
+    } else {
+      alert("⚠️ Something went wrong, please try again.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("❌ Unable to reach the server.");
+  }
+}
+
+document
+  .querySelector('.contact-form button[type="reset"]')
+  .addEventListener('click', () => {
+    alert("🧹 Form cleared!");
+  });
+</script>
+
   <!-- Background matrix / subtle animated canvas -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
