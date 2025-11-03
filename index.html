@@ -1,52 +1,222 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./assets/images/hacker.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>HAK3R Theme by GetCyber</title>
-    <meta name="title" content="HAK3R Theme by GetCyber">
-    <meta name="description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
-    <meta name="author" content="Dan Duran">
-    <meta name="keywords" content="cybersecurity, portfolio, freelancer, security professional, hacker, ethical hacking, open source">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hak3r.getcyber.me">
-    <meta property="og:title" content="HAK3R Theme by GetCyber">
-    <meta property="og:description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
-    <meta property="og:image" content="https://hak3r.getcyber.me/assets/images/hak3r.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hak3r.getcyber.me">
-    <meta property="twitter:title" content="HAK3R Theme by GetCyber">
-    <meta property="twitter:description" content="Free Open Source portfolio website template for cybersecurity freelancers and professionals. Created by GetCyber.">
-    <meta property="twitter:image" content="https://hak3r.getcyber.me/assets/images/hak3r.jpg">
-    
-    <!-- Theme Color for browsers -->
-    <meta name="theme-color" content="#16a34a">
-    <meta name="msapplication-TileColor" content="#16a34a">
-    
-    <!-- Additional Meta -->
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-    <meta name="generator" content="Vite">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Smooth Scroll -->
-    <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
-    <script src="./assets/js/custom.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aditi Shyam Pandit — Cybersecurity Portfolio</title>
+  <meta name="description" content="Aditi Shyam Pandit — Cybersecurity Specialist. Projects: Phishing Analyzer, Ransomware Detection, Network Scanning." />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/particles.css">
+
+  <!-- Fav icon (optional) -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+
+</head>
+<body>
+  <!-- Background matrix / subtle animated canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <nav class="navbar container">
+      <div class="brand">
+        <a href="#hero" class="brand-link">
+          <span class="logo-glow">CYBERANGLE</span>
+          <small class="brand-sub">Aditi Pandit</small>
+        </a>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button id="menu-toggle" class="menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero container">
+    <div class="hero-left">
+      <h1 class="hero-title">Hi, I’m <span class="name-glow">Aditi Shyam Pandit</span></h1>
+      <p class="hero-sub">Cybersecurity Specialist · CEH Trainee · DFIR & Threat Hunting Enthusiast</p>
+
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn ghost" href="https://github.com/Cyberangle002" target="_blank" rel="noopener">My GitHub</a>
+      </div>
+
+      <ul class="hero-stats">
+        <li><strong>3+</strong><span>Live Projects</span></li>
+        <li><strong>100+</strong><span>Scans & Assessments</span></li>
+        <li><strong>CEH</strong><span>Completed Training</span></li>
+      </ul>
+    </div>
+
+    <div class="hero-right">
+      <div class="card hero-card">
+        <div class="card-header">
+          <div class="dot green"></div>
+          <div class="dot yellow"></div>
+          <div class="dot red"></div>
+        </div>
+        <div class="card-body">
+          <pre class="terminal">
+<span class="t-prompt">>_</span> booting.cyberangle...
+<span class="t-line">Initializing AI Phishing Analyzer</span>
+<span class="t-line">Ransomware Detection: model load ✅</span>
+<span class="t-line">Network scan queue: 3 targets</span>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container about">
+    <h2 class="section-title">About</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Hello — I’m <strong>Aditi Shyam Pandit</strong>, a cybersecurity enthusiast and fresher specializing in penetration testing, DFIR, and network security. I completed CEH training with ASD Academy and work on projects involving phishing detection, ransomware analysis, and automated network scanning.</p>
+        <p>I love building automated security tools, learning malware analysis, and sharing knowledge with the community.</p>
+        <p><strong>Contact:</strong> aditipandit1331@gmail.com | <a href="https://linkedin.com/in/aditipandit002" target="_blank">LinkedIn</a></p>
+      </div>
+      <div class="about-cards">
+        <div class="info-card">
+          <h3>Education</h3>
+          <p>Bachelor of Computer Science (BCS) — Graduated July 2024</p>
+        </div>
+        <div class="info-card">
+          <h3>Training</h3>
+          <p>CEH, ASD Academy — Kali Linux, Malware analysis basics</p>
+        </div>
+        <div class="info-card">
+          <h3>Tools</h3>
+          <p>Kali Linux, Nmap, Burp Suite, Wireshark, Python</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <h4>Web App Penetration</h4>
+        <div class="skill-bar"><div class="bar" data-level="85"></div></div>
+      </div>
+      <div class="skill">
+        <h4>Network Scanning</h4>
+        <div class="skill-bar"><div class="bar" data-level="90"></div></div>
+      </div>
+      <div class="skill">
+        <h4>Malware Analysis</h4>
+        <div class="skill-bar"><div class="bar" data-level="70"></div></div>
+      </div>
+      <div class="skill">
+        <h4>Python / Scripting</h4>
+        <div class="skill-bar"><div class="bar" data-level="80"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container projects">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-thumb" style="background-image:url('images/phishing.png')"></div>
+        <div class="project-body">
+          <h3>AI-Powered Phishing Email Analyzer</h3>
+          <p>Classifier to detect spear-phishing using NLP + heuristics. Built with Python & Flask.</p>
+          <div class="project-tags">
+            <span>Python</span><span>NLP</span><span>Flask</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/Cyberangle002/ai-phishing" target="_blank" class="btn small">View Repo</a>
+            <a href="#" class="btn small ghost">Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb" style="background-image:url('images/ransomware.png')"></div>
+        <div class="project-body">
+          <h3>Ransomware Detection System</h3>
+          <p>AI + rule based detection for suspicious processes & file I/O behavior (prototype).</p>
+          <div class="project-tags">
+            <span>ML</span><span>DFIR</span><span>Analysis</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/Cyberangle002/ransomware-detection" target="_blank" class="btn small">View Repo</a>
+            <a href="#" class="btn small ghost">Report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb" style="background-image:url('images/network.png')"></div>
+        <div class="project-body">
+          <h3>Automated Network Scanning Suite</h3>
+          <p>Wrapper around Nmap + automated reporting, vulnerability aggregation & alerting.</p>
+          <div class="project-tags">
+            <span>Nmap</span><span>Bash</span><span>Automation</span>
+          </div>
+          <div class="project-cta">
+            <a href="https://github.com/Cyberangle002/network-scan" target="_blank" class="btn small">View Repo</a>
+            <a href="#" class="btn small ghost">Run</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <form id="contact-form" class="contact-form" action="#" method="post" onsubmit="submitContact(event)">
+        <label><span>Name</span><input type="text" name="name" required></label>
+        <label><span>Email</span><input type="email" name="email" required></label>
+        <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send Message</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <div class="contact-info">
+        <h3>Reach Out</h3>
+        <p>Email: <a href="mailto(aditipandit1331@gmail.com)">aditipandit1331@gmail.com</a></p>
+        <p>Phone: +91 9552871001</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/aditipandit002" target="_blank">aditipandit002</a></p>
+        <p>GitHub: <a href="https://github.com/Cyberangle002" target="_blank">Cyberangle002</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aditi Shyam Pandit — Made with ♥ by Cyberangle</p>
+      <div class="socials">
+        <a href="https://github.com/Cyberangle002" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/aditipandit002" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+</body>
 </html>

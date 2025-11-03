@@ -1,103 +1,64 @@
-// public/assets/js/custom.js
+// basic interactive bits: menu toggle, skill bars anim, contact mock submit, year, canvas matrix bg
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Initialize all animations
-    function initializeAnimations() {
-        // Typewriter functionality
-        function initTypewriter() {
-            const dynamicWordsEl = document.getElementById("dynamicWords");
-            if (!dynamicWordsEl) {
-                setTimeout(initTypewriter, 100);
-                return;
-            }
+document.addEventListener('DOMContentLoaded', function () {
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-            const phrases = [
-                "Ethical Hacking Done Right",
-                "Cybersecurity Solutions That Matter",
-                "Defending Your Digital Frontier",
-                "Innovative Security Strategies",
-                "Protecting Your Digital Assets"
-            ];
+  // menu toggle
+  const menuBtn = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  menuBtn && menuBtn.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  });
 
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let isWaiting = false;
+  // animate skill bars
+  const bars = document.querySelectorAll('.skill-bar .bar');
+  bars.forEach(bar => {
+    const level = bar.getAttribute('data-level') || '60';
+    // small delay for nicer effect
+    setTimeout(() => {
+      bar.style.width = level + '%';
+    }, 400);
+  });
 
-            function type() {
-                const currentPhrase = phrases[phraseIndex];
-                
-                if (isDeleting) {
-                    dynamicWordsEl.textContent = currentPhrase.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    dynamicWordsEl.textContent = currentPhrase.substring(0, charIndex + 1);
-                    charIndex++;
-                }
+  // contact form fake submit
+  window.submitContact = function(e){
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const data = new FormData(form);
+    // Here you can wire fetch to a serverless function; for demo we show a toast
+    alert('Thanks ' + (data.get('name')||'') + '! Your message was received (demo).');
+    form.reset();
+  };
 
-                dynamicWordsEl.textContent += "|";
+  // subtle matrix / particles background -- canvas
+  (function matrixBg(){
+    const canvas = document.getElementById('bg-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    function resize(){ w = canvas.width = innerWidth; h = canvas.height = innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
 
-                let typeSpeed = isDeleting ? 50 : 100;
+    const cols = Math.floor(w / 20) + 1;
+    const ypos = Array(cols).fill(0);
 
-                if (!isDeleting && charIndex === currentPhrase.length) {
-                    isWaiting = true;
-                    typeSpeed = 2000;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    typeSpeed = 500;
-                }
+    function draw(){
+      ctx.fillStyle = 'rgba(6,7,10,0.08)';
+      ctx.fillRect(0,0,w,h);
+      ctx.fillStyle = 'rgba(0,255,138,0.06)';
+      ctx.font = '14px monospace';
 
-                setTimeout(type, typeSpeed);
-            }
-
-            type();
-        }
-
-        // Counter animation
-        function initCounters() {
-            const counters = document.querySelectorAll('[data-counter-target]');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-counter-target'));
-                if (!isNaN(target)) {
-                    let current = 0;
-                    const interval = setInterval(() => {
-                        if (current < target) {
-                            current += Math.ceil(target / 100);
-                            if (current > target) current = target;
-                            counter.textContent = current.toLocaleString();
-                        } else {
-                            clearInterval(interval);
-                        }
-                    }, 20);
-                }
-            });
-        }
-
-        // Logo animation
-        function initLogoAnimation() {
-            const logo = document.getElementById('hacker-logo');
-            if (!logo) return;
-            
-            // Initial setup
-            logo.style.display = 'flex';
-            logo.style.opacity = '0';
-            logo.style.transform = 'translate3d(50px, 20px, 0) rotate(5deg)';
-            logo.style.transition = 'all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-            
-            requestAnimationFrame(() => {
-                logo.style.opacity = '1';
-                logo.style.transform = 'translate3d(0, 0, 0) rotate(0deg)';
-            });
-        }
-
-        // Start all animations in sequence
-        initTypewriter();
-        setTimeout(initLogoAnimation, 300);
-        setTimeout(initCounters, 1000);
+      ypos.forEach((y, ind) => {
+        const text = String.fromCharCode(48 + Math.random() * 42);
+        const x = ind * 20;
+        ctx.fillText(text, x, y);
+        if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+        else ypos[ind] = y + 18;
+      });
+      requestAnimationFrame(draw);
     }
-
-    // Start everything
-    initializeAnimations();
+    draw();
+  })();
 });
