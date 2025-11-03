@@ -21,7 +21,7 @@ Built with **React**, **TypeScript**, and **Tailwind CSS**, this site showcases 
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Portfolio](https://cyberangle.me)** *(Deploy it using GitHub Pages or Netlify)*
+🔗 **[View Live Portfolio](http://51.20.189.213/)** *(Deploy it using GitHub Pages or Netlify)*
 
 ---
 
