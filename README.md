@@ -1,127 +1,56 @@
-# HAK3R Free Portfolio Website
+# 🧠 Cyberangle – Free Cybersecurity Portfolio Website
 
-A modern, responsive portfolio template built specifically for cybersecurity professionals. Built with React, TypeScript, and Flowbite React components, it offers a sleek design with light/dark mode support.
-
-## 💪 Join me! 
-- **👉 Subscribe to my YouTube Channel [GetCyber - YouTube](https://youtube.com/getCyber)**
-- **👉 Checkout some more awesome tools at [GetCyber](https://getcyber.me/tools)**
-- **👉 Discord Server [GetCyber - Discord](https://discord.gg/YUf3VpDeNH)**
+A modern, responsive, and hacker-themed portfolio website built by **Aditi Shyam Pandit** — a cybersecurity professional.  
+Built with **React**, **TypeScript**, and **Tailwind CSS**, this site showcases projects, certifications, and cybersecurity expertise with a dark hacker-style design.
 
 ---
-## 📺 Tutorial
 
-[![Video Demo](https://img.youtube.com/vi/DQ3S2x1zbzk/0.jpg)](https://youtu.be/DQ3S2x1zbzk)
+## 💪 Join Me!
 
-## 💻 Screenshot 
+- **👉 Connect on LinkedIn:** [Aditi Shyam Pandit](https://www.linkedin.com/in/aditipandit002/)  
+- **👉 Follow My GitHub Projects:** [Cyberangle002](https://github.com/Cyberangle002)  
+- **👉 Learn Cybersecurity:** New blogs and projects coming soon at *Cyberangle*  
 
-![Image](https://github.com/user-attachments/assets/faabb4d6-e21f-4b46-9959-342c3d00b40f)
+---
+
+## 💻 Screenshot
+
+![Portfolio Screenshot](https://github.com/user-attachments/assets/faabb4d6-e21f-4b46-9959-342c3d00b40f)
+
+---
 
 ## 🚀 Live Demo
 
-Check out the live demo at [https://hak3r.getcyber.me](https://hak3r.getcyber.me)
+🔗 **[View Live Portfolio](https://cyberangle.me)** *(Deploy it using GitHub Pages or Netlify)*
+
+---
 
 ## ✨ Features
 
-- **Responsive Design:** Fully responsive layout that works on all devices
-- **Dark/Light Mode:** System-aware theme that respects user preferences
-- **Modern Stack:** Built with React 18, TypeScript, and Vite
-- **Optimized Build:** Production-ready with static file exports
-- **Component Library:** Leverages Flowbite React for consistent UI
-- **Performance Focused:** Fast page loads and smooth animations
-- **SEO Ready:** Includes meta tags and OpenGraph support
-- **Easy Customization:** Well-organized codebase for easy modifications
+- **Responsive Layout** – Works flawlessly on mobile, tablet, and desktop  
+- **Dark Hacker Theme** – Perfect for cybersecurity branding  
+- **Fast and Lightweight** – Built with Vite + React  
+- **Easy Customization** – Change text, projects, or skills easily  
+- **Modern Stack** – React + TypeScript + Tailwind  
+- **Portfolio Ready** – Add your certifications, GitHub repos, and contact form  
+- **SEO Friendly** – Optimized meta tags and OpenGraph setup  
+
+---
 
 ## 🛠️ Tech Stack
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Flowbite React
-- ESLint & Prettier
+- React 18  
+- TypeScript  
+- Tailwind CSS  
+- Vite  
+- Flowbite React  
+- ESLint + Prettier  
+
+---
 
 ## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Dan-Duran/hak3r.git
-cd hak3r
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-## 🏗️ Building for Production (folder dist)
-
-Create a production build:
-```bash
-npm run build
-```
-
-Preview the production build:
-```bash
-npm run preview
-```
-
-## 📁 Project Structure
-
-```
-hak3r/
-├── public/
-│   └── assets/
-│       ├── css/
-│       ├── images/
-│       └── js/
-├── src/
-│   ├── components/
-│   │   ├── Nav.tsx
-│   │   └── Footer.tsx
-│   ├── App.tsx
-│   └── main.tsx
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── tailwind.config.js
-```
-
-## 🔧 Configuration
-
-### Vite Config
-
-The project uses a custom Vite configuration for optimal production builds:
-- Static file exports
-- Asset optimization
-- Proper path resolution
-- Custom JS handling
-
-## 🚀 Deployment
-
-The site can be deployed to any static hosting service. The production build outputs to the `dist` folder.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Dan Duran** - [GetCyber](https://getcyber.me)
-
----
-
-Made with ❤️ by GetCyber
+git clone https://github.com/Cyberangle002/cyberangle-portfolio.git
+cd cyberangle-portfolio
