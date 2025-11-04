@@ -16,24 +16,25 @@ pipeline {
             }
         }
 
-      stage('Install Node & NPM') {
-    steps {
-        echo "🧠 Installing Node.js & npm..."
-        bat 'npm install -g npm@latest'
-    }
-}
+        stage('Install Node & NPM') {
+            steps {
+                echo "🧠 Installing Node.js & npm..."
+                bat 'npm install -g npm@latest'
+            }
+        }
 
-stage('Install Dependencies') {
-    steps {
-        bat 'npm install'
-    }
-}
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
 
-stage('Build Project') {
-    steps {
-        bat 'npm run build'
+        stage('Build Project') {
+            steps {
+                bat 'npm run build'
+            }
+        }
     }
-}
 
     post {
         success {
@@ -43,5 +44,4 @@ stage('Build Project') {
             echo "❌ Deployment failed! Check Jenkins console for errors."
         }
     }
-}
-
+}   // <-- Missing closing brace added here ✅
