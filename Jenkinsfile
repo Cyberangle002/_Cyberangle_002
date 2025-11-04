@@ -3,6 +3,7 @@ pipeline {
     environment {
         APP_DIR = "/var/www/html"
     }
+
     stages {
         stage('Checkout Code') {
             steps {
@@ -10,65 +11,69 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Cyberangle002/_Cyberangle_002.git'
             }
         }
+
         stage('Install Node & NPM') {
             steps {
-                echo "🧠 Installing Node.js & npm..."
-                sh '''
-                    if ! command -v node >/dev/null 2>&1; then
-                        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-                        sudo apt install -y nodejs
-                    fi
-                    node -v
-                    npm -v
-                '''
+                echo "🧠 Checking Node.js & npm versions..."
+                script {
+                    if (isUnix()) {
+                        sh 'node -v'
+                        sh 'npm -v'
+                    } else {
+                        bat 'node -v'
+                        bat 'npm -v'
+                    }
+                }
             }
         }
+
         stage('Install Dependencies') {
             steps {
-                echo "📦 Running npm install..."
-                sh 'npm install'
+                echo "📦 Installing dependencies..."
+                script {
+                    if (isUnix()) {
+                        sh 'npm install'
+                    } else {
+                        bat 'npm install'
+                    }
+                }
             }
         }
+
         stage('Build Project') {
             steps {
-                echo "🏗️ Building the website..."
-                sh 'npm run build || echo "No build script found, using static site files."'
+                echo "🏗 Building project..."
+                script {
+                    if (isUnix()) {
+                        sh 'npm run build'
+                    } else {
+                        bat 'npm run build'
+                    }
+                }
             }
         }
-        stage('Install Nginx') {
+
+        stage('Deploy Project') {
             steps {
-                echo "🌐 Installing Nginx..."
-                sh '''
-                    if ! command -v nginx >/dev/null 2>&1; then
-                        sudo apt update
-                        sudo apt install -y nginx
-                    fi
-                    sudo systemctl enable nginx
-                    sudo systemctl start nginx
-                '''
-            }
-        }
-        stage('Deploy to Nginx') {
-            steps {
-                echo "🚀 Deploying build to /var/www/html ..."
-                sh '''
-                    sudo rm -rf ${APP_DIR}/*
-                    if [ -d "build" ]; then
-                        sudo cp -r build/* ${APP_DIR}/
-                    else
-                        sudo cp -r * ${APP_DIR}/
-                    fi
-                    sudo systemctl restart nginx
-                '''
+                echo "🚀 Deploying project..."
+                script {
+                    if (isUnix()) {
+                        sh 'sudo cp -r build/* /var/www/html/'
+                    } else {
+                        bat 'xcopy /E /I /Y build C:\\inetpub\\wwwroot\\cyberangle_frontend'
+                    }
+                }
             }
         }
     }
+
     post {
         success {
-            echo "🎉 Deployment Successful! Visit your server's public IP to view the site."
+            echo "✅ Deployment Completed Successfully!"
         }
         failure {
-            echo "❌ Deployment Failed! Check Jenkins logs for errors."
+            echo "❌ Deployment Failed! Check Jenkins logs for details."
         }
     }
 }
+
