@@ -36,12 +36,10 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            echo "✅ Deployment completed successfully! Visit your server's public IP to view the site."
-        }
-        failure {
-            echo "❌ Deployment failed! Check Jenkins console for errors."
-        }
+   post {
+    success {
+        sh 'echo "✅ Deployment completed successfully! Visit: http://51.20.189.213"'
     }
+}
+
 }   // <-- Missing closing brace added here ✅
