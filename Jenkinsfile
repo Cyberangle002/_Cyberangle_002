@@ -38,8 +38,12 @@ pipeline {
 
    post {
     success {
-        sh 'echo "✅ Deployment completed successfully! Visit: http://51.20.189.213"'
+        bat 'echo ✅ Deployment completed successfully! Visit: http://51.20.189.213'
+    }
+    failure {
+        bat 'echo ❌ Deployment Failed! Check Jenkins logs for errors.'
     }
 }
+
 
 }   // <-- Missing closing brace added here ✅
