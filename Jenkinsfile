@@ -60,7 +60,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'sudo cp -r build/* /var/www/html/'
                     } else {
-                        bat 'xcopy /E /I /Y build C:\\inetpub\\wwwroot\\cyberangle_frontend'
+                        bat 'xcopy /E /I /Y dist C:\\inetpub\\wwwroot\\cyberangle_frontend'
                     }
                 }
             }
